@@ -124,4 +124,29 @@ class ProjectController extends Controller
             'project' => new ProjectResource($project)
         ]);
     }
+
+    public function credentials(Request $request, $id)
+    {
+        $project = Project::findOrFail($id);
+
+        // Generate temporary credentials (placeholder logic for Module 1 constraint)
+        $credentials = [
+            'admin' => [
+                'email' => 'admin@' . ($project->slug ?? 'demo') . '.com',
+                'password' => Str::random(10),
+            ],
+            'user' => [
+                'email' => 'user@' . ($project->slug ?? 'demo') . '.com',
+                'password' => Str::random(10),
+            ],
+            'expires_at' => now()->addDays(7)->toDateTimeString(),
+        ];
+
+        $project->update(['temp_credentials' => $credentials]);
+
+        return response()->json([
+            'message' => 'Credentials generated successfully',
+            'credentials' => $credentials
+        ]);
+    }
 }

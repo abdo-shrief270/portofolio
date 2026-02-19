@@ -27,6 +27,8 @@ use App\Http\Controllers\Api\V1\Admin\SitemapController;
 use App\Http\Controllers\Api\V1\Admin\BackupController;
 use App\Http\Controllers\Api\V1\Admin\SeoAuditController;
 use App\Http\Controllers\Api\V1\Admin\MediaController;
+use App\Http\Controllers\Api\V1\Admin\DnsController;
+use App\Http\Controllers\Api\V1\Admin\NginxController;
 
 Route::prefix('v1')->group(function () {
     // Auth
@@ -39,6 +41,7 @@ Route::prefix('v1')->group(function () {
     Route::get('projects', [ProjectController::class, 'index']);
     Route::get('projects/featured', [ProjectController::class, 'featured']);
     Route::get('projects/{project:slug}', [ProjectController::class, 'show']);
+    Route::get('projects/{project:slug}/og-image', [ProjectController::class, 'ogImage']);
     Route::post('projects/{project:slug}/track', [ProjectController::class, 'track']);
     
     Route::get('categories', [CategoryController::class, 'index']);
@@ -64,6 +67,7 @@ Route::prefix('v1')->group(function () {
         Route::post('projects/{id}/duplicate', [AdminProjectController::class, 'duplicate']);
         Route::post('projects/{id}/provision', [AdminProjectController::class, 'provision']);
         Route::post('projects/{id}/deprovision', [AdminProjectController::class, 'deprovision']);
+        Route::post('projects/{id}/credentials', [AdminProjectController::class, 'credentials']);
         Route::post('projects/{id}/start', [AdminProjectController::class, 'start']);
         Route::post('projects/{id}/stop', [AdminProjectController::class, 'stop']);
         
@@ -94,6 +98,11 @@ Route::prefix('v1')->group(function () {
 
         // Cache Management
         Route::post('cache/clear', [CacheController::class, 'clear']);
+
+        // Infrastructure
+        Route::get('dns/records', [DnsController::class, 'index']);
+        Route::get('nginx/configs', [NginxController::class, 'index']);
+        Route::get('nginx/configs/{name}', [NginxController::class, 'show']);
 
         // Sitemap
         Route::post('sitemap/generate', [SitemapController::class, 'generate']);

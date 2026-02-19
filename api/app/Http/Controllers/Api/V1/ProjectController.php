@@ -54,4 +54,15 @@ class ProjectController extends Controller
 
         return response()->json(['message' => 'View tracked']);
     }
+
+    public function ogImage(Project $project, Request $request)
+    {
+        // For now, this just returns the project's thumbnail URL or a generated image placeholder path.
+        // Full implementation will involve Intervention Image generating a dynamic template.
+        $imageUrl = $project->og_image ?? $project->thumbnail ?? "https://placehold.co/1200x630/1e3a5f/FFF?text=" . urlencode($project->title);
+
+        return response()->json([
+            'og_image_url' => $imageUrl
+        ]);
+    }
 }

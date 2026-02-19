@@ -3,6 +3,7 @@ import Credentials from "next-auth/providers/credentials"
 import type { NextAuthConfig } from "next-auth"
 
 export const config = {
+    trustHost: true,
     theme: {
         logo: "https://next-auth.js.org/img/logo/logo-sm.png",
     },
