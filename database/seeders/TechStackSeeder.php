@@ -16,18 +16,21 @@ class TechStackSeeder extends Seeder
                 'slug' => 'laravel',
                 'icon' => 'heroicon-o-cube',
                 'color' => '#FF2D20',
+                'is_featured' => true,
             ],
             [
                 'name' => 'PHP',
                 'slug' => 'php',
                 'icon' => 'heroicon-o-code-bracket',
                 'color' => '#777BB4',
+                'is_featured' => true,
             ],
             [
                 'name' => 'Node.js',
                 'slug' => 'nodejs',
                 'icon' => 'heroicon-o-server',
                 'color' => '#339933',
+                'is_featured' => true,
             ],
             [
                 'name' => 'Python',
@@ -54,6 +57,7 @@ class TechStackSeeder extends Seeder
                 'slug' => 'mysql',
                 'icon' => 'heroicon-o-circle-stack',
                 'color' => '#4479A1',
+                'is_featured' => true,
             ],
             [
                 'name' => 'PostgreSQL',
@@ -86,6 +90,7 @@ class TechStackSeeder extends Seeder
                 'slug' => 'vuejs',
                 'icon' => 'heroicon-o-sparkles',
                 'color' => '#4FC08D',
+                'is_featured' => true,
             ],
             [
                 'name' => 'React',
@@ -124,6 +129,7 @@ class TechStackSeeder extends Seeder
                 'slug' => 'docker',
                 'icon' => 'heroicon-o-cube',
                 'color' => '#2496ED',
+                'is_featured' => true,
             ],
             [
                 'name' => 'AWS',
@@ -142,6 +148,7 @@ class TechStackSeeder extends Seeder
                 'slug' => 'git',
                 'icon' => 'heroicon-o-code-bracket-square',
                 'color' => '#F05032',
+                'is_featured' => true,
             ],
             [
                 'name' => 'GitHub Actions',
@@ -168,6 +175,7 @@ class TechStackSeeder extends Seeder
                 'slug' => 'rest-api',
                 'icon' => 'heroicon-o-arrows-right-left',
                 'color' => '#009688',
+                'is_featured' => true,
             ],
             [
                 'name' => 'GraphQL',

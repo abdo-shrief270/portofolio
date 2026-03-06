@@ -44,6 +44,11 @@ class TechStackResource extends Resource
 
                         Forms\Components\ColorPicker::make('color'),
 
+                        Forms\Components\Toggle::make('is_featured')
+                            ->label('Show on Homepage')
+                            ->helperText('Display this tech stack as a floating badge on the home page')
+                            ->default(false),
+
                         Forms\Components\TextInput::make('sort_order')
                             ->numeric()
                             ->default(0),
@@ -65,6 +70,11 @@ class TechStackResource extends Resource
 
                 Tables\Columns\ColorColumn::make('color'),
 
+                Tables\Columns\IconColumn::make('is_featured')
+                    ->label('Featured')
+                    ->boolean()
+                    ->sortable(),
+
                 Tables\Columns\TextColumn::make('projects_count')
                     ->counts('projects')
                     ->label('Projects'),
@@ -72,7 +82,10 @@ class TechStackResource extends Resource
                 Tables\Columns\TextColumn::make('sort_order')
                     ->sortable(),
             ])
-            ->filters([])
+            ->filters([
+                Tables\Filters\TernaryFilter::make('is_featured')
+                    ->label('Featured'),
+            ])
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),

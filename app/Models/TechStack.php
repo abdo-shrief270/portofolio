@@ -12,8 +12,18 @@ class TechStack extends Model
         'slug',
         'icon',
         'color',
+        'is_featured',
         'sort_order',
     ];
+
+    protected $casts = [
+        'is_featured' => 'boolean',
+    ];
+
+    public function scopeFeatured($query)
+    {
+        return $query->where('is_featured', true);
+    }
 
     public function projects(): BelongsToMany
     {

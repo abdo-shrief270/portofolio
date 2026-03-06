@@ -36,7 +36,13 @@ class PageController extends Controller
             ->take(6)
             ->get();
 
-        return view('pages.home', compact('featuredProjects', 'services', 'testimonials'));
+        $techStacks = TechStack::query()
+            ->featured()
+            ->orderBy('sort_order')
+            ->take(8)
+            ->get();
+
+        return view('pages.home', compact('featuredProjects', 'services', 'testimonials', 'techStacks'));
     }
 
     public function about(): View

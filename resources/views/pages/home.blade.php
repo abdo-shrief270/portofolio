@@ -3,9 +3,22 @@
     <section class="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900 overflow-hidden">
         <!-- Animated Background Elements -->
         <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" style="animation-delay: 2s;"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" style="animation-delay: 4s;"></div>
+            <!-- Glowing Orbs -->
+            <div class="absolute -top-40 -right-40 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob" style="animation-delay: 4s;"></div>
+            <div class="absolute top-20 left-1/4 w-64 h-64 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" style="animation-delay: 3s;"></div>
+            <div class="absolute bottom-20 right-1/4 w-72 h-72 bg-violet-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" style="animation-delay: 5s;"></div>
+
+            <!-- Animated Grid Pattern -->
+            <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(99, 102, 241, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.3) 1px, transparent 1px); background-size: 50px 50px;"></div>
+
+            <!-- Floating Particles -->
+            <div class="absolute top-1/4 left-1/6 w-2 h-2 bg-indigo-400 rounded-full animate-ping opacity-60" style="animation-duration: 3s;"></div>
+            <div class="absolute top-1/3 right-1/5 w-2 h-2 bg-purple-400 rounded-full animate-ping opacity-60" style="animation-duration: 4s; animation-delay: 1s;"></div>
+            <div class="absolute bottom-1/3 left-1/4 w-2 h-2 bg-pink-400 rounded-full animate-ping opacity-60" style="animation-duration: 3.5s; animation-delay: 2s;"></div>
+            <div class="absolute top-2/3 right-1/3 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-ping opacity-50" style="animation-duration: 4.5s; animation-delay: 0.5s;"></div>
+            <div class="absolute bottom-1/4 right-1/6 w-1.5 h-1.5 bg-violet-400 rounded-full animate-ping opacity-50" style="animation-duration: 3.8s; animation-delay: 1.5s;"></div>
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
@@ -53,23 +66,70 @@
                 <!-- Profile Image -->
                 <div class="hidden lg:flex justify-center">
                     <div class="relative">
-                        <!-- Profile Photo with gradient border -->
-                        <div class="relative w-80 h-80">
-                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-full animate-pulse"></div>
-                            <div class="absolute inset-1 bg-gray-900 rounded-full"></div>
-                            <img src="{{ $settings->get('profile_image', '/assets/profile_image.jpg') }}" alt="{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}" class="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-full">
+                        <!-- Outer Glow Rings -->
+                        <div class="absolute inset-0 w-80 h-80 -m-6">
+                            <div class="absolute inset-0 border-2 border-indigo-500/20 rounded-full animate-ping" style="animation-duration: 3s;"></div>
+                            <div class="absolute inset-4 border border-purple-500/30 rounded-full animate-ping" style="animation-duration: 4s; animation-delay: 1s;"></div>
                         </div>
 
-                        <!-- Floating badges -->
-                        <div class="absolute -top-4 -right-4 bg-white rounded-xl shadow-xl p-3 animate-float" style="animation-delay: 1s;">
-                            <svg class="w-8 h-8 text-red-500" viewBox="0 0 256 264"><path fill="#FF2D20" d="M255.856 59.62c.095.351.144.713.144 1.077v56.568c0 1.478-.79 2.843-2.073 3.578L206.45 148.18v54.18a4.135 4.135 0 0 1-2.062 3.579l-99.108 57.053c-.227.128-.474.21-.722.299c-.093.03-.18.087-.278.113a4.15 4.15 0 0 1-2.114 0c-.114-.03-.217-.093-.325-.134c-.227-.083-.464-.155-.68-.278L2.073 205.939A4.128 4.128 0 0 1 0 202.361V32.471c0-.372.052-.744.144-1.098c.025-.108.087-.206.124-.309c.072-.206.134-.412.237-.6c.062-.113.155-.206.237-.308c.103-.155.196-.31.329-.443c.093-.093.217-.155.33-.237c.124-.093.237-.196.371-.268L51.893.415a4.13 4.13 0 0 1 4.125 0l49.362 28.392c.134.072.247.175.37.268c.114.082.238.144.331.237c.133.134.226.288.33.443c.08.102.174.195.236.308c.103.196.165.402.237.6c.041.103.103.2.124.309c.093.351.144.713.144 1.077v105.51l41.27-23.766V60.697c0-.36.052-.727.144-1.076c.026-.108.088-.207.124-.31c.072-.205.135-.41.237-.6c.062-.113.156-.205.237-.307c.103-.155.196-.31.33-.443c.092-.093.216-.155.33-.237c.123-.093.236-.196.37-.268l49.362-28.392a4.13 4.13 0 0 1 4.125 0l49.361 28.392c.134.072.247.175.371.268c.113.082.237.144.33.237c.133.134.226.288.329.443c.082.102.175.195.237.307c.103.196.165.402.237.6c.041.103.103.201.124.31Z"/></svg>
+                        <!-- Profile Photo with gradient border -->
+                        <div class="relative w-80 h-80">
+                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-full animate-spin-slow"></div>
+                            <div class="absolute inset-1 bg-gray-900 rounded-full"></div>
+                            <img src="{{ $settings->get('profile_image', '/assets/profile_image.jpg') }}" alt="{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}" class="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-full">
+
+                            <!-- Inner Glow Effect -->
+                            <div class="absolute inset-2 rounded-full bg-gradient-to-tr from-indigo-500/20 via-transparent to-pink-500/20"></div>
                         </div>
-                        <div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-xl p-3 animate-float" style="animation-delay: 2s;">
-                            <svg class="w-8 h-8 text-blue-600" viewBox="0 0 256 256"><path fill="#777BB4" d="M128 0C57.308 0 0 28.654 0 64s57.308 64 128 64s128-28.654 128-64S198.692 0 128 0Zm0 112c-52.934 0-96-21.49-96-48s43.066-48 96-48s96 21.49 96 48s-43.066 48-96 48Z"/></svg>
-                        </div>
-                        <div class="absolute top-1/2 -right-8 bg-white rounded-xl shadow-xl p-3 animate-float" style="animation-delay: 3s;">
-                            <svg class="w-8 h-8 text-green-600" viewBox="0 0 256 256"><path fill="#68A063" d="M128 0C57.31 0 0 57.31 0 128s57.31 128 128 128s128-57.31 128-128S198.69 0 128 0Zm0 234.67c-58.88 0-106.67-47.79-106.67-106.67S69.12 21.33 128 21.33S234.67 69.12 234.67 128S186.88 234.67 128 234.67Z"/></svg>
-                        </div>
+
+                        <!-- Floating badges - Dynamic from TechStack (Random positions) -->
+                        @php
+                            // Generate random positions around the profile image circle
+                            $count = min($techStacks->count(), 8);
+                            $positions = [];
+                            $usedAngles = [];
+
+                            for ($i = 0; $i < $count; $i++) {
+                                // Distribute angles evenly with some randomness
+                                $baseAngle = ($i / $count) * 360;
+                                $randomOffset = rand(-20, 20);
+                                $angle = deg2rad($baseAngle + $randomOffset);
+
+                                // Random distance from center (170-220px from center of 320px image)
+                                $distance = rand(170, 220);
+
+                                // Calculate x, y from center
+                                $x = cos($angle) * $distance;
+                                $y = sin($angle) * $distance;
+
+                                // Convert to percentage offset from center (160px is half of 320px)
+                                $left = 160 + $x - 24; // 24 is half badge size
+                                $top = 160 + $y - 24;
+
+                                $positions[] = [
+                                    'left' => $left,
+                                    'top' => $top,
+                                    'delay' => $i * 0.4 + (rand(0, 10) / 10),
+                                ];
+                            }
+                        @endphp
+
+                        @foreach($techStacks->take(8) as $index => $tech)
+                            @php $pos = $positions[$index] ?? ['left' => 0, 'top' => 0, 'delay' => 0]; @endphp
+                            <div class="absolute bg-white dark:bg-gray-800 rounded-xl p-3 animate-float hover:scale-110 transition-transform cursor-pointer z-10"
+                                 style="left: {{ $pos['left'] }}px; top: {{ $pos['top'] }}px; animation-delay: {{ $pos['delay'] }}s; box-shadow: 0 8px 30px {{ $tech->color ?? '#6366f1' }}40;"
+                                 title="{{ $tech->name }}">
+                                @if($tech->icon && str_starts_with($tech->icon, 'heroicon'))
+                                    <x-dynamic-component :component="$tech->icon" class="w-7 h-7" style="color: {{ $tech->color ?? '#6366f1' }};" />
+                                @elseif($tech->icon)
+                                    <div class="w-7 h-7 flex items-center justify-center" style="color: {{ $tech->color ?? '#6366f1' }};">{!! $tech->icon !!}</div>
+                                @else
+                                    <div class="w-7 h-7 flex items-center justify-center rounded text-white text-xs font-bold" style="background: {{ $tech->color ?? '#6366f1' }};">
+                                        {{ strtoupper(substr($tech->name, 0, 2)) }}
+                                    </div>
+                                @endif
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
