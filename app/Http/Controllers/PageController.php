@@ -6,6 +6,7 @@ use App\Models\BlogPost;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Skill;
+use App\Models\TechStack;
 use App\Models\Testimonial;
 use Illuminate\View\View;
 
@@ -83,7 +84,12 @@ class PageController extends Controller
             ->orderBy('sort_order')
             ->get();
 
-        return view('pages.services', compact('services'));
+        $techStacks = TechStack::query()
+            ->orderBy('sort_order')
+            ->orderBy('name')
+            ->get();
+
+        return view('pages.services', compact('services', 'techStacks'));
     }
 
     public function blog(): View
