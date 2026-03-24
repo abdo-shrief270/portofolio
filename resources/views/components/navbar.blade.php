@@ -6,7 +6,8 @@
                     <div class="w-10 h-10 rounded-xl overflow-hidden">
                         <img src="{{ $settings->get('profile_image', '/assets/profile_image.jpg') }}"
                              alt=""
-                             class="w-full h-full object-cover">
+                             class="w-full h-full object-cover"
+                             width="40" height="40">
                     </div>
                     <span class="text-xl font-bold text-gray-900 dark:text-white">{{ explode(' ', $settings->get('profile_name', 'Abdelrahman Shrief'))[0] }}</span>
                 </a>

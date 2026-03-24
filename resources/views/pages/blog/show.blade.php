@@ -1,7 +1,13 @@
 <x-layouts.app title="{{ $post->title }} - {{ $settings->get('profile_name', 'Abdelrahman Shrief') }}">
     <!-- Highlight.js for code syntax highlighting -->
     @push('styles')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- JetBrains Mono: only loaded on blog post pages -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"></noscript>
     <style>
         /* Code Block Styling */
         article pre {
@@ -224,7 +230,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             @if($post->getFirstMediaUrl('featured_image'))
                 <div class="rounded-2xl overflow-hidden shadow-2xl mb-12 -mt-32 relative z-10">
-                    <img src="{{ $post->getFirstMediaUrl('featured_image') }}" alt="{{ $post->title }}" class="w-full">
+                    <img src="{{ $post->getFirstMediaUrl('featured_image') }}" alt="{{ $post->title }}" class="w-full" loading="eager" fetchpriority="high">
                 </div>
             @endif
 
@@ -290,7 +296,7 @@
                         <article class="group bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700 card-hover">
                             @if($relatedPost->getFirstMediaUrl('featured_image'))
                                 <div class="overflow-hidden">
-                                    <img src="{{ $relatedPost->getFirstMediaUrl('featured_image') }}" alt="{{ $relatedPost->title }}" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <img src="{{ $relatedPost->getFirstMediaUrl('featured_image') }}" alt="{{ $relatedPost->title }}" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="400" height="176">
                                 </div>
                             @else
                                 <div class="w-full h-44 bg-gradient-to-br from-indigo-500 to-purple-600"></div>
@@ -335,13 +341,13 @@
     </section>
 
     @push('scripts')
-    <!-- Highlight.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
+    <!-- Highlight.js (deferred to avoid render blocking) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

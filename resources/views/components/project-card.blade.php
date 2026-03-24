@@ -3,7 +3,7 @@
 <div class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700 card-hover">
     <div class="relative overflow-hidden">
         @if($project->getFirstMediaUrl('thumbnail'))
-            <img src="{{ $project->getFirstMediaUrl('thumbnail') }}" alt="{{ $project->title }}" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="{{ $project->getFirstMediaUrl('thumbnail') }}" alt="{{ $project->title }}" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="400" height="208">
         @else
             <div class="w-full h-52 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
                 <span class="text-5xl text-white/50 font-bold">{{ substr($project->title, 0, 1) }}</span>

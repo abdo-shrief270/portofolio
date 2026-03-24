@@ -48,7 +48,8 @@
                         <div class="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl overflow-hidden h-full">
                             <img src="{{ $settings->get('profile_image', '/assets/profile_image.jpg') }}"
                                  alt="{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}"
-                                 class="w-full h-full object-cover">
+                                 class="w-full h-full object-cover"
+                                 fetchpriority="high" width="384" height="384">
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 to-transparent p-6">
                                 <h3 class="text-2xl font-bold text-white mb-1">{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}</h3>
                                 <p class="text-indigo-400">{{ $settings->get('profile_title', 'Senior Backend Developer') }}</p>

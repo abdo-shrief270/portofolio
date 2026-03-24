@@ -7,7 +7,8 @@
                     <div class="w-12 h-12 rounded-xl overflow-hidden">
                         <img src="{{ $settings->get('profile_image', '/assets/profile_image.jpg') }}"
                              alt="{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}"
-                             class="w-full h-full object-cover">
+                             class="w-full h-full object-cover"
+                             width="48" height="48" loading="lazy">
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-white">{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}</h3>

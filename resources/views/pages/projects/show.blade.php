@@ -73,7 +73,7 @@
                     <!-- Featured Image -->
                     @if($project->getFirstMediaUrl('thumbnail'))
                         <div class="rounded-2xl overflow-hidden shadow-2xl">
-                            <img src="{{ $project->getFirstMediaUrl('thumbnail') }}" alt="{{ $project->title }}" class="w-full">
+                            <img src="{{ $project->getFirstMediaUrl('thumbnail') }}" alt="{{ $project->title }}" class="w-full" loading="lazy">
                         </div>
                     @endif
 
@@ -104,7 +104,7 @@
                             <div class="grid grid-cols-2 gap-4">
                                 @foreach($project->getMedia('gallery') as $image)
                                     <div class="rounded-xl overflow-hidden shadow-lg card-hover cursor-pointer">
-                                        <img src="{{ $image->getUrl() }}" alt="{{ $project->title }}" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+                                        <img src="{{ $image->getUrl() }}" alt="{{ $project->title }} - {{ __('Gallery image') }}" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="192">
                                     </div>
                                 @endforeach
                             </div>

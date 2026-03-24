@@ -3,22 +3,18 @@
     <section class="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900 overflow-hidden">
         <!-- Animated Background Elements -->
         <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
-            <!-- Glowing Orbs -->
+            <!-- Glowing Orbs (reduced for performance) -->
             <div class="absolute -top-40 -right-40 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
             <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob" style="animation-delay: 2s;"></div>
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob" style="animation-delay: 4s;"></div>
-            <div class="absolute top-20 left-1/4 w-64 h-64 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" style="animation-delay: 3s;"></div>
-            <div class="absolute bottom-20 right-1/4 w-72 h-72 bg-violet-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" style="animation-delay: 5s;"></div>
 
             <!-- Animated Grid Pattern -->
             <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(99, 102, 241, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.3) 1px, transparent 1px); background-size: 50px 50px;"></div>
 
-            <!-- Floating Particles -->
+            <!-- Floating Particles (reduced for performance) -->
             <div class="absolute top-1/4 left-1/6 w-2 h-2 bg-indigo-400 rounded-full animate-ping opacity-60" style="animation-duration: 3s;"></div>
             <div class="absolute top-1/3 right-1/5 w-2 h-2 bg-purple-400 rounded-full animate-ping opacity-60" style="animation-duration: 4s; animation-delay: 1s;"></div>
             <div class="absolute bottom-1/3 left-1/4 w-2 h-2 bg-pink-400 rounded-full animate-ping opacity-60" style="animation-duration: 3.5s; animation-delay: 2s;"></div>
-            <div class="absolute top-2/3 right-1/3 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-ping opacity-50" style="animation-duration: 4.5s; animation-delay: 0.5s;"></div>
-            <div class="absolute bottom-1/4 right-1/6 w-1.5 h-1.5 bg-violet-400 rounded-full animate-ping opacity-50" style="animation-duration: 3.8s; animation-delay: 1.5s;"></div>
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
@@ -66,17 +62,16 @@
                 <!-- Profile Image -->
                 <div class="hidden lg:flex justify-center">
                     <div class="relative">
-                        <!-- Outer Glow Rings -->
+                        <!-- Outer Glow Ring -->
                         <div class="absolute inset-0 w-80 h-80 -m-6">
-                            <div class="absolute inset-0 border-2 border-indigo-500/20 rounded-full animate-ping" style="animation-duration: 3s;"></div>
-                            <div class="absolute inset-4 border border-purple-500/30 rounded-full animate-ping" style="animation-duration: 4s; animation-delay: 1s;"></div>
+                            <div class="absolute inset-0 border-2 border-indigo-500/20 rounded-full animate-pulse" style="animation-duration: 3s;"></div>
                         </div>
 
                         <!-- Profile Photo with gradient border -->
                         <div class="relative w-80 h-80">
                             <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-full animate-spin-slow"></div>
                             <div class="absolute inset-1 bg-gray-900 rounded-full"></div>
-                            <img src="{{ $settings->get('profile_image', '/assets/profile_image.jpg') }}" alt="{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}" class="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-full">
+                            <img src="{{ $settings->get('profile_image', '/assets/profile_image.jpg') }}" alt="{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}" class="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-full" fetchpriority="high" width="304" height="304">
 
                             <!-- Inner Glow Effect -->
                             <div class="absolute inset-2 rounded-full bg-gradient-to-tr from-indigo-500/20 via-transparent to-pink-500/20"></div>
@@ -246,7 +241,7 @@
                             <p class="text-white/90 italic mb-6">"{{ $testimonial->content }}"</p>
                             <div class="flex items-center">
                                 @if($testimonial->getFirstMediaUrl('avatar'))
-                                    <img src="{{ $testimonial->getFirstMediaUrl('avatar') }}" alt="{{ $testimonial->client_name }}" class="w-12 h-12 rounded-full object-cover">
+                                    <img src="{{ $testimonial->getFirstMediaUrl('avatar') }}" alt="{{ $testimonial->client_name }}" class="w-12 h-12 rounded-full object-cover" loading="lazy" width="48" height="48">
                                 @else
                                     <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-400 to-purple-400 flex items-center justify-center text-white font-bold">
                                         {{ substr($testimonial->client_name, 0, 1) }}
