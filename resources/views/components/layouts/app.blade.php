@@ -8,6 +8,24 @@
     <title>{{ $title ?? 'Abdelrahman Shrief - Senior Backend Developer' }}</title>
     <meta name="description" content="{{ $description ?? 'Senior Backend Developer specializing in Laravel, PHP, and modern web technologies.' }}">
 
+    <!-- Favicon / Nav Icon for Google Search -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/jpeg" sizes="192x192" href="{{ asset('assets/profile_image.jpg') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/profile_image.jpg') }}">
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ $title ?? 'Abdelrahman Shrief - Senior Backend Developer' }}">
+    <meta property="og:description" content="{{ $description ?? 'Senior Backend Developer specializing in Laravel, PHP, and modern web technologies.' }}">
+    <meta property="og:image" content="{{ asset('assets/profile_image.jpg') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:site_name" content="Abdelrahman Shrief">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title ?? 'Abdelrahman Shrief - Senior Backend Developer' }}">
+    <meta name="twitter:description" content="{{ $description ?? 'Senior Backend Developer specializing in Laravel, PHP, and modern web technologies.' }}">
+    <meta name="twitter:image" content="{{ asset('assets/profile_image.jpg') }}">
+    <meta name="theme-color" content="#4f46e5">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700,800|cairo:300,400,500,600,700" rel="stylesheet" />
@@ -70,9 +88,14 @@
     </style>
 </head>
 <body class="font-sans antialiased bg-gray-50 dark:bg-gray-900 {{ app()->getLocale() === 'ar' ? 'font-cairo' : 'font-inter' }}">
+    <!-- Skip to main content link for keyboard/screen reader users -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-indigo-600 focus:text-white focus:px-6 focus:py-3 focus:rounded-xl focus:shadow-lg focus:outline-none">
+        {{ __('Skip to main content') }}
+    </a>
+
     <div class="min-h-screen">
         <x-navbar />
-        <main>
+        <main id="main-content">
             {{ $slot }}
         </main>
         <x-footer />

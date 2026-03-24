@@ -15,12 +15,12 @@
             <div class="p-6 w-full">
                 <div class="flex gap-3">
                     @if($project->project_url)
-                        <a href="{{ $project->project_url }}" target="_blank" class="flex-1 bg-white text-gray-900 py-2 px-4 rounded-lg text-sm font-medium text-center hover:bg-indigo-500 hover:text-white transition">
+                        <a href="{{ $project->project_url }}" target="_blank" rel="noopener noreferrer" class="flex-1 bg-white text-gray-900 py-2 px-4 rounded-lg text-sm font-medium text-center hover:bg-indigo-500 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-indigo-500" aria-label="{{ __('Live Demo') }} - {{ $project->title }}">
                             {{ __('Live Demo') }}
                         </a>
                     @endif
                     @if($project->github_url)
-                        <a href="{{ $project->github_url }}" target="_blank" class="flex-1 bg-gray-800 text-white py-2 px-4 rounded-lg text-sm font-medium text-center hover:bg-gray-700 transition">
+                        <a href="{{ $project->github_url }}" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-800 text-white py-2 px-4 rounded-lg text-sm font-medium text-center hover:bg-gray-700 transition focus:outline-none focus:ring-2 focus:ring-indigo-500" aria-label="{{ __('Source Code') }} - {{ $project->title }}">
                             {{ __('Code') }}
                         </a>
                     @endif

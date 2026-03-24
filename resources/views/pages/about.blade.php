@@ -2,11 +2,11 @@
     <!-- Hero Section -->
     <section class="relative min-h-[60vh] flex items-center bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900 overflow-hidden">
         <!-- Animated Background -->
-        <div class="absolute inset-0">
+        <div class="absolute inset-0" aria-hidden="true">
             <div class="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
             <div class="absolute bottom-20 right-10 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
         </div>
-        <div class="absolute inset-0 bg-grid opacity-10"></div>
+        <div class="absolute inset-0 bg-grid opacity-10" aria-hidden="true"></div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -202,7 +202,7 @@
                                             <span class="font-medium text-gray-900 dark:text-white">{{ $skill->name }}</span>
                                             <span class="text-sm font-semibold text-indigo-600 dark:text-indigo-400">{{ $skill->proficiency }}%</span>
                                         </div>
-                                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5" role="progressbar" aria-valuenow="{{ $skill->proficiency }}" aria-valuemin="0" aria-valuemax="100" aria-label="{{ $skill->name }} {{ __('proficiency') }}">
                                             <div class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2.5 rounded-full transition-all duration-500" style="width: {{ $skill->proficiency }}%"></div>
                                         </div>
                                     </div>
@@ -217,9 +217,9 @@
 
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-700 relative overflow-hidden">
-        <div class="absolute inset-0 bg-grid opacity-10"></div>
-        <div class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl"></div>
+        <div class="absolute inset-0 bg-grid opacity-10" aria-hidden="true"></div>
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl" aria-hidden="true"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl" aria-hidden="true"></div>
 
         <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
