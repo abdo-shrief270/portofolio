@@ -15,8 +15,8 @@ Route::get('/blog', [PageController::class, 'blog'])->name('blog.index');
 Route::get('/blog/{slug}', [PageController::class, 'blogShow'])->name('blog.show');
 Route::get('/quote', [PageController::class, 'quote'])->name('quote');
 
-// Sitemap
-Route::get('/sitemap.xml', function () {
+// Sitemap (generates static file)
+Route::get('/generate-sitemap', function () {
     $urls = collect();
 
     // Static pages
@@ -63,5 +63,8 @@ Route::get('/sitemap.xml', function () {
 
     $content .= '</urlset>';
 
+    // Write static file to public/
+    file_put_contents(public_path('sitemap.xml'), $content);
+
     return response($content, 200, ['Content-Type' => 'application/xml']);
-})->name('sitemap');
+})->name('generate-sitemap');
