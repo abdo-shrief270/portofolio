@@ -206,7 +206,7 @@
             <div class="flex flex-wrap items-center gap-6 text-gray-400">
                 <div class="flex items-center">
                     <div class="w-10 h-10 rounded-full overflow-hidden me-3 ring-2 ring-indigo-500/50">
-                        <img src="{{ $settings->get('profile_image', '/assets/profile_image.jpg') }}"
+                        <img src="{{ $settings->get('profile_image', '/assets/profile_image.webp') }}"
                              alt="{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}"
                              class="w-full h-full object-cover">
                     </div>
@@ -244,7 +244,7 @@
                     <!-- Author -->
                     <div class="flex items-center">
                         <div class="w-14 h-14 rounded-xl overflow-hidden me-4 ring-2 ring-indigo-500/30">
-                            <img src="{{ $settings->get('profile_image', '/assets/profile_image.jpg') }}"
+                            <img src="{{ $settings->get('profile_image', '/assets/profile_image.webp') }}"
                                  alt="{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}"
                                  class="w-full h-full object-cover">
                         </div>

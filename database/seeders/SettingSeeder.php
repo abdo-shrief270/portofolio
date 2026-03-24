@@ -158,7 +158,7 @@ class SettingSeeder extends Seeder
             // Profile
             [
                 'key' => 'profile_image',
-                'value' => ['en' => '/assets/profile_image.jpg', 'ar' => '/assets/profile_image.jpg'],
+                'value' => ['en' => '/assets/profile_image.webp', 'ar' => '/assets/profile_image.webp'],
                 'group' => 'profile',
             ],
             [

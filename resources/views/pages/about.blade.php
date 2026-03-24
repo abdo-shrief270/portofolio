@@ -46,7 +46,7 @@
                         <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl transform rotate-6 animate-pulse"></div>
                         <div class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl transform -rotate-3"></div>
                         <div class="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl overflow-hidden h-full">
-                            <img src="{{ $settings->get('profile_image', '/assets/profile_image.jpg') }}"
+                            <img src="{{ $settings->get('profile_image', '/assets/profile_image.webp') }}"
                                  alt="{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}"
                                  class="w-full h-full object-cover"
                                  fetchpriority="high" width="384" height="384">

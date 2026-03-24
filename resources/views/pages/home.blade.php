@@ -71,7 +71,7 @@
                         <div class="relative w-80 h-80">
                             <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-full animate-spin-slow"></div>
                             <div class="absolute inset-1 bg-gray-900 rounded-full"></div>
-                            <img src="{{ $settings->get('profile_image', '/assets/profile_image.jpg') }}" alt="{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}" class="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-full" fetchpriority="high" width="304" height="304">
+                            <img src="{{ $settings->get('profile_image', '/assets/profile_image.webp') }}" alt="{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}" class="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-full" fetchpriority="high" width="304" height="304">
 
                             <!-- Inner Glow Effect -->
                             <div class="absolute inset-2 rounded-full bg-gradient-to-tr from-indigo-500/20 via-transparent to-pink-500/20"></div>

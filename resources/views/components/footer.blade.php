@@ -5,7 +5,7 @@
             <div class="col-span-1 md:col-span-2">
                 <div class="flex items-center space-x-3 rtl:space-x-reverse mb-6">
                     <div class="w-12 h-12 rounded-xl overflow-hidden">
-                        <img src="{{ $settings->get('profile_image', '/assets/profile_image.jpg') }}"
+                        <img src="{{ $settings->get('profile_image', '/assets/profile_image.webp') }}"
                              alt="{{ $settings->get('profile_name', 'Abdelrahman Shrief') }}"
                              class="w-full h-full object-cover"
                              width="48" height="48" loading="lazy">

@@ -4,7 +4,7 @@
             <div class="flex items-center">
                 <a href="{{ route('home') }}" class="flex items-center space-x-2 rtl:space-x-reverse" aria-label="{{ __('Home') }} - {{ $settings->get('profile_name', 'Abdelrahman Shrief') }}">
                     <div class="w-10 h-10 rounded-xl overflow-hidden">
-                        <img src="{{ $settings->get('profile_image', '/assets/profile_image.jpg') }}"
+                        <img src="{{ $settings->get('profile_image', '/assets/profile_image.webp') }}"
                              alt=""
                              class="w-full h-full object-cover"
                              width="40" height="40">

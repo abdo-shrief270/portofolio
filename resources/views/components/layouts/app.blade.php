@@ -10,20 +10,20 @@
 
     <!-- Favicon / Nav Icon for Google Search -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-    <link rel="icon" type="image/jpeg" sizes="192x192" href="{{ asset('assets/profile_image.jpg') }}">
-    <link rel="apple-touch-icon" href="{{ asset('assets/profile_image.jpg') }}">
+    <link rel="icon" type="image/jpeg" sizes="192x192" href="{{ asset('assets/profile_image.webp') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/profile_image.webp') }}">
 
     <!-- Open Graph / Social Meta -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ $title ?? 'Abdelrahman Shrief - Senior Backend Developer' }}">
     <meta property="og:description" content="{{ $description ?? 'Senior Backend Developer specializing in Laravel, PHP, and modern web technologies.' }}">
-    <meta property="og:image" content="{{ asset('assets/profile_image.jpg') }}">
+    <meta property="og:image" content="{{ asset('assets/profile_image.webp') }}">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:site_name" content="Abdelrahman Shrief">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $title ?? 'Abdelrahman Shrief - Senior Backend Developer' }}">
     <meta name="twitter:description" content="{{ $description ?? 'Senior Backend Developer specializing in Laravel, PHP, and modern web technologies.' }}">
-    <meta name="twitter:image" content="{{ asset('assets/profile_image.jpg') }}">
+    <meta name="twitter:image" content="{{ asset('assets/profile_image.webp') }}">
     <meta name="theme-color" content="#4f46e5">
 
     <!-- DNS prefetch for 3rd parties -->
